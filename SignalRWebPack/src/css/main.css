@@ -23,6 +23,10 @@ html, body {
     font-weight:bold;
 }
 
+.message-author{
+    font-weight:bold;
+}
+
 .messages{
     border:1px solid #000;
     margin:10px;

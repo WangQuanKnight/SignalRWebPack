@@ -12080,23 +12080,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Cat\\.nuget\\packages\\": {},
+    "C:\\Users\\WQ\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Cat\\source\\repos\\SignalRWebPack\\SignalRWebPack\\SignalRWebPack.csproj",
+      "projectUniqueName": "C:\\Users\\WQ\\source\\repos\\SignalRWebPack\\SignalRWebPack\\SignalRWebPack.csproj",
       "projectName": "SignalRWebPack",
-      "projectPath": "C:\\Users\\Cat\\source\\repos\\SignalRWebPack\\SignalRWebPack\\SignalRWebPack.csproj",
-      "packagesPath": "C:\\Users\\Cat\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Cat\\source\\repos\\SignalRWebPack\\SignalRWebPack\\obj\\",
+      "projectPath": "C:\\Users\\WQ\\source\\repos\\SignalRWebPack\\SignalRWebPack\\SignalRWebPack.csproj",
+      "packagesPath": "C:\\Users\\WQ\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\WQ\\source\\repos\\SignalRWebPack\\SignalRWebPack\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Cat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\WQ\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

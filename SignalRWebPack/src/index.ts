@@ -1,11 +1,23 @@
 ﻿import "./css/main.css";
+import * as SignalR from "@aspnet/signalr";
 
 const divMessages: HTMLDivElement = document.querySelector("#divMessages");
-const tbMessages: HTMLInputElement = document.querySelector("#tbMessage");
+const tbMessage: HTMLInputElement = document.querySelector("#tbMessage");
 const btnSend: HTMLButtonElement = document.querySelector("#btnSend");
 const username = new Date().getTime();
 
-tbMessages.addEventListener("keyup", (e: KeyboardEvent) => {
+const connection = new SignalR.HubConnectionBuilder().withUrl("/hub").build();
+connection.start().catch(err => document.write(err));
+
+connection.on("messageReceived", (username: string, message: string) => {
+    let messageContainer = document.createElement("div");
+    messageContainer.innerHTML = `<div class="message-author">${username}</div><div>haha${message}</div>`;
+
+    divMessages.appendChild(messageContainer);
+    divMessages.scrollTop = divMessages.scrollHeight;
+});
+
+tbMessage.addEventListener("keyup", (e: KeyboardEvent) => {
     if (e.keyCode === 13) {
         send();
     }
@@ -14,5 +26,5 @@ tbMessages.addEventListener("keyup", (e: KeyboardEvent) => {
 btnSend.addEventListener("click", send);
 
 function send() {
-
+    connection.send("newMessage", username, tbMessage.value).then(() => tbMessage.value = "");
 }

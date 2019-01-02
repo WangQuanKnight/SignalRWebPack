@@ -2,35 +2,39 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
+const webpack = require('webpack');
 module.exports = {
     entry: "./src/index.ts",
     output: {
-        "path": path.resolve(__dirname + "wwwroot"),
-        "filename": "[name].[chunkhash].js",
-        "publicPath":"/"
+        path: path.resolve(__dirname, "wwwroot"),
+        filename: "[name].[hash].js",
     },
     resolve: {
-        extensions:[".js",".ts"]
+        extensions: [".js", ".ts"]
+    },
+    devtool: 'inline-source-map',
+    devServer: {
+
     },
     module: {
         rules: [
             {
                 test: /\.ts$/,
-                use:"ts-loader"
-            }, {
+                use: "ts-loader"
+            },
+            {
                 test: /\.css$/,
-                use: [MiniCssExtractPlugin,"css-loader"]
+                use: [MiniCssExtractPlugin.loader, "css-loader"]
             }
         ]
     },
-    plugins[
+    plugins: [
         new CleanWebpackPlugin(["wwwroot/*"]),
         new HtmlWebpackPlugin({
             template: "./src/index.html"
         }),
         new MiniCssExtractPlugin({
-            filename:"css/[name].[chunkhash].css"
+            filename: "css/[name].[chunkhash].css"
         })
     ]
 };
